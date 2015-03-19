@@ -18,7 +18,8 @@ int main(int argc, char * argv[]){
 	// 1st arg- address of the process address space where the file will be mapped to
 	// 2nd arg- length of the file in bytes that will be mapped into the address space
 	// 3rd arg- Write permission is given
-	// 4th arg- flag
+	// 4th arg- Because of MAP_SHARED value any change made to the file will be visible to other
+	// process sharing the file immediately
 	// 5th arg- the file descriptor pointer
 	fileMemory = mmap( 0, 0x10, PROT_WRITE, MAP_SHARED, fd, 0 );
 
